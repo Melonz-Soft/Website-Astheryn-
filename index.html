@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Astheryn Group</title>
+
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      background: linear-gradient(135deg, #0f0f1a, #1a1a2e);
+      color: #ffffff;
+      scroll-behavior: smooth;
+    }
+
+    nav {
+      padding: 15px 30px;
+      background: rgba(0,0,0,0.4);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      backdrop-filter: blur(6px);
+      z-index: 10;
+    }
+
+    nav a {
+      color: #fff;
+      text-decoration: none;
+      margin-left: 20px;
+      font-size: 14px;
+    }
+
+    header {
+      padding: 90px 20px;
+      text-align: center;
+    }
+
+    header h1 {
+      font-size: 46px;
+      letter-spacing: 3px;
+      margin-bottom: 10px;
+    }
+
+    header p {
+      color: #cfcfe6;
+      font-size: 16px;
+    }
+
+    section {
+      max-width: 900px;
+      margin: auto;
+      padding: 70px 20px;
+    }
+
+    .card {
+      background: rgba(255,255,255,0.06);
+      border-radius: 14px;
+      padding: 30px;
+      margin-bottom: 30px;
+    }
+
+    .card h2 {
+      color: #8ab4ff;
+      margin-top: 0;
+    }
+
+    .whatsapp-btn {
+      display: inline-block;
+      margin-top: 20px;
+      padding: 14px 30px;
+      background: #25D366;
+      color: #ffffff;
+      border-radius: 30px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    footer {
+      text-align: center;
+      padding: 25px;
+      font-size: 13px;
+      color: #aaa;
+      border-top: 1px solid rgba(255,255,255,0.1);
+    }
+
+    /* ===== SCROLL ANIMATION ===== */
+    .animate {
+      opacity: 0;
+      transform: translateY(40px);
+      transition: all 0.8s ease;
+    }
+
+    .animate.show {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <nav>
+    <strong>ASTHERYN</strong>
+    <div>
+      <a href="#home">Home</a>
+      <a href="#about">About</a>
+      <a href="#join">Join</a>
+    </div>
+  </nav>
+
+  <!-- HOME -->
+  <header id="home" class="animate">
+    <h1>ASTHERYN</h1>
+    <p>A community built on creativity, unity, and vision</p>
+  </header>
+
+  <!-- ABOUT -->
+  <section id="about">
+    <div class="card animate">
+      <h2>About Astheryn</h2>
+      <p>
+        Astheryn adalah sebuah group yang dibangun atas dasar
+        kebersamaan, kreativitas, dan identitas yang kuat.
+      </p>
+    </div>
+
+    <div class="card animate">
+      <h2>Our Vision</h2>
+      <p>
+        Menjadi komunitas yang solid, berkelas, dan dikenal
+        karena kualitas serta pengaruh positifnya.
+      </p>
+    </div>
+  </section>
+
+  <!-- JOIN -->
+  <section id="join">
+    <div class="card animate">
+      <h2>Join Astheryn</h2>
+      <p>
+        Ingin menjadi bagian dari Astheryn?
+        Hubungi kami langsung melalui WhatsApp.
+      </p>
+
+      <a
+        class="whatsapp-btn"
+        href="https://wa.me/6281234567890"
+        target="_blank"
+      >
+        Join via WhatsApp
+      </a>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="animate">
+    © 2026 Astheryn Group. All rights reserved.
+  </footer>
+
+  <!-- JAVASCRIPT SCROLL ANIMATION -->
+  <script>
+    const animatedElements = document.querySelectorAll('.animate');
+
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('show');
+        }
+      });
+    }, {
+      threshold: 0.2
+    });
+
+    animatedElements.forEach(el => observer.observe(el));
+  </script>
+
+</body>
+</html>
